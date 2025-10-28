@@ -4,6 +4,7 @@ import { UserComponent } from "./user/user.component";
 import { DUMMY_USERS } from './dummy-users';
 import { TasksComponent } from './tasks/tasks.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,11 +15,16 @@ import { TasksComponent } from './tasks/tasks.component';
 export class AppComponent {
   users = DUMMY_USERS;
   selectedUserId!: string ;
+  isAddingTask = false;
   
 
 
   onUserSelected(userId: string) {
     this.selectedUserId = userId;
+  }
+
+  onAddTask() {
+    this.isAddingTask = true;
   }
 
   get selectedUser() {
